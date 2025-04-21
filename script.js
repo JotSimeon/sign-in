@@ -1,32 +1,43 @@
 function processResult() {
-    let Email = emailAddress.value
-    let Password = enterPassword.value
+    const email = emailAddress.value;
+    const password = enterPassword.value;
 
-    if (Email == "") {
-        result.innerHTML = ``;
+    // Clear previous error messages
+    result.innerHTML = "";
+    result1.innerHTML = "";
+
+    // Email validation
+    if (email == "") {
+        result.innerHTML = `<p style="color:red; font-size:12px;">Email can't be empty.</p>`;
         return;
-    } else if (!/^([\w.%+-]+)@gmail\.com$/.test(Email)) {
-        result.innerHTML = `<p style="color:red; font-size:12px;">Invalid Gmail address.</p>`;
+    } else if (!/^([\w.%+-]+)@gmail\.com$/.test(email)) {
+        result.innerHTML = `<p style="color:red; font-size:12px;">invalid Gmail address</p>`;
         return;
     }
-    if (Password == "") {
-        result1.innerHTML = ``;
+
+    // Password validation
+    if (password == "") {
+        result1.innerHTML = `<p style="color:red; font-size:12px;">Password can't be empty.</p>`;
         return;
-    }else if (Password.length < 8) {
-        result1.innerHTML = `<p style="color: red; font-size:12px;">Password must be at least 8 characters long.</p>`;
+    } else if (password.length < 8) {
+        result1.innerHTML = `<p style="color:red; font-size:12px;">Password must be at least 8 characters long.</p>`;
         return;
-    } else if (!/[A-Z]/.test(Password)) {
-        result1.innerHTML = `<p style="color: red; font-size:12px;">Password must contain at least one uppercase letter.</p>`;
+    } else if (!/[A-Z]/.test(password)) {
+        result1.innerHTML = `<p style="color:red; font-size:12px;">Password must contain at least one uppercase letter.</p>`;
         return;
-    } else if (!/[a-z]/.test(Password)) {
-        result1.innerHTML = `<p style="color: red; font-size:12px;">Password must contain at least one lowercase letter.</p>`;
+    } else if (!/[a-z]/.test(password)) {
+        result1.innerHTML = `<p style="color:red; font-size:12px;">Password must contain at least one lowercase letter.</p>`;
         return;
-    } else if (!/[0-9]/.test(Password)) {
-        result1.innerHTML = `<p style="color: red; font-size:12px;">Password must contain at least one number.</p>`;
+    } else if (!/[0-9]/.test(password)) {
+        result1.innerHTML = `<p style="color:red; font-size:12px;">Password must contain at least one number.</p>`;
         return;
-    } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(Password)) {
-        result1.innerHTML = `<p style="color: red; font-size:12px;">Password must contain at least one special character.</p>`;
+    } else if (!/[!@#$%^&*(),.?\":{}|<>]/.test(password)) {
+        result1.innerHTML = `<p style="color:red; font-size:12px;">Password must contain at least one special character.</p>`;
         return;
-    } 
-        alert("☑️ Sign in successful!")
+    }
+
+    // If all validations pass
+    alert("☑️ Sign in successful!");
+
 }
+
