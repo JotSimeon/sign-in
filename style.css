@@ -36,7 +36,7 @@ label {
     margin-top: 10px;
 }
 
-input {
+.input2 {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -44,6 +44,9 @@ input {
     border-radius: 5px;
     background-color: transparent;
     color: white;
+}
+.result {
+    padding: 2px 0px 0px 10px;
 }
 
 input::placeholder {
@@ -82,4 +85,8 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+.show {
+    padding-left:10px ;
+    font-size: 15px;
 }
